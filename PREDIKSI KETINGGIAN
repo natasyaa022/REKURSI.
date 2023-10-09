@@ -1,0 +1,49 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+
+// Headers
+string toString (double);
+int toInt (string);
+double toDouble (string);
+
+int main() {
+    int n;
+    int s;
+    int v;
+    int t;
+    int status;
+    int sinA;
+
+    cout << "masukan N atau jumlah burung" << endl;
+    cin >> n;
+    cout << "masukan nilai s" << endl;
+    cin >> s;
+    cout << "masukannilai v" << endl;
+    cin >> v;
+    cout << "masukan nilai t" << endl;
+    cin >> t;
+    sinA = (int) sin((double) (s * 22) / 7 / 180);
+    t = (int) (pow(v, 2) * pow(sinA, 2) / 20);
+    cout << t << endl;
+    return 0;
+}
+
+// The following implements type conversion functions.
+string toString (double value) { //int also
+    stringstream temp;
+    temp << value;
+    return temp.str();
+}
+
+int toInt (string text) {
+    return atoi(text.c_str());
+}
+
+double toDouble (string text) {
+    return atof(text.c_str());
+}
